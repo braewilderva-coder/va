@@ -8,57 +8,116 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(180deg, #020617, #0f172a);
       color: white;
     }
 
+    /* HEADER */
     header {
       text-align: center;
-      padding: 40px 20px;
-      background: #020617;
+      padding: 60px 20px;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      border-bottom: 1px solid #1e293b;
     }
 
     h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      letter-spacing: 1px;
     }
 
-    p {
-      color: #94a3b8;
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #38bdf8;
     }
 
+    .book-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 26px;
+      background: #38bdf8;
+      color: #020617;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 18px rgba(56, 189, 248, 0.25);
+    }
+
+    .book-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(56, 189, 248, 0.35);
+      text-decoration: none;
+    }
+
+    /* CONTAINER */
     .container {
       max-width: 900px;
       margin: auto;
-      padding: 20px;
+      padding: 30px 20px;
     }
 
-    .demo {
-      background: #1e293b;
-      padding: 20px;
+    /* SECTION TITLE */
+    h2 {
+      font-size: 1.8rem;
       margin-bottom: 20px;
-      border-radius: 12px;
+      border-left: 4px solid #38bdf8;
+      padding-left: 10px;
+    }
+
+    /* DEMO CARDS */
+    .demo {
+      background: rgba(30, 41, 59, 0.6);
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 16px;
+      border: 1px solid #334155;
+      backdrop-filter: blur(6px);
+      transition: all 0.25s ease;
+    }
+
+    .demo:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
     }
 
     .demo h3 {
       margin-top: 0;
+      font-size: 1.3rem;
     }
 
+    .demo p {
+      margin: 8px 0 12px;
+      color: #94a3b8;
+    }
+
+    /* AUDIO PLAYER */
     audio {
       width: 100%;
-      margin-top: 10px;
+      border-radius: 8px;
+      filter: invert(1) hue-rotate(180deg);
     }
 
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       color: #64748b;
+      border-top: 1px solid #1e293b;
+      margin-top: 40px;
     }
 
+    /* LINKS */
     a {
       color: #38bdf8;
       text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -67,6 +126,7 @@
 <header>
   <h1>Brae Wilder</h1>
   <p>Voice Actor | Narration | Character Work</p>
+  <a href="mailto:braewilderva@gmail.com" class="book-btn">Book Me</a>
 </header>
 
 <div class="container">
@@ -79,7 +139,6 @@
       <p>Bright, energetic reads for ads and promos.</p>
       <audio controls>
         <source src="https://dn721808.ca.archive.org/0/items/commercial_202604/commercial.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
       </audio>
     </div>
 
