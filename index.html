@@ -11,12 +11,26 @@
       font-family: 'Segoe UI', Tahoma, sans-serif;
       background: linear-gradient(180deg, #020617, #0f172a);
       color: white;
+      scroll-behavior: smooth;
+    }
+
+    /* GLOW BACKGROUND */
+    .bg-glow {
+      position: fixed;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(56,189,248,0.15), transparent 70%);
+      filter: blur(80px);
+      z-index: -1;
     }
 
     /* HEADER */
     header {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px 60px;
       background: radial-gradient(circle at top, #0f172a, #020617);
       border-bottom: 1px solid #1e293b;
     }
@@ -27,16 +41,48 @@
       letter-spacing: 1px;
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
+    .tagline {
+      margin-top: 12px;
+      font-size: 1.2rem;
       color: #38bdf8;
+      font-weight: 500;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #94a3b8;
+    }
+
+    /* AUDIO WAVE */
+    .wave {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 20px;
+    }
+
+    .wave span {
+      width: 4px;
+      height: 20px;
+      background: #38bdf8;
+      border-radius: 2px;
+      animation: bounce 1s infinite ease-in-out;
+    }
+
+    .wave span:nth-child(2) { animation-delay: 0.1s; }
+    .wave span:nth-child(3) { animation-delay: 0.2s; }
+    .wave span:nth-child(4) { animation-delay: 0.3s; }
+    .wave span:nth-child(5) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      0%, 100% { transform: scaleY(0.5); }
+      50% { transform: scaleY(1.8); }
     }
 
     .book-btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 26px;
+      margin-top: 25px;
+      padding: 14px 30px;
       background: #38bdf8;
       color: #020617;
       font-weight: 700;
@@ -47,16 +93,15 @@
     }
 
     .book-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(56, 189, 248, 0.35);
-      text-decoration: none;
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
     }
 
     /* CONTAINER */
     .container {
       max-width: 900px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
 
     /* SECTION TITLE */
@@ -94,11 +139,36 @@
       color: #94a3b8;
     }
 
-    /* AUDIO PLAYER */
+    /* AUDIO */
     audio {
       width: 100%;
       border-radius: 8px;
       filter: invert(1) hue-rotate(180deg);
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: rgba(30, 41, 59, 0.6);
+      padding: 40px 20px;
+      border-radius: 16px;
+      border: 1px solid #334155;
+      margin-top: 40px;
+    }
+
+    .contact p {
+      color: #94a3b8;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #38bdf8;
+      color: #020617;
+      border-radius: 999px;
+      font-weight: bold;
+      text-decoration: none;
     }
 
     /* FOOTER */
@@ -109,24 +179,22 @@
       border-top: 1px solid #1e293b;
       margin-top: 40px;
     }
-
-    /* LINKS */
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
 
+<div class="bg-glow"></div>
+
 <header>
   <h1>Brae Wilder</h1>
+  <div class="tagline">Warm. Expressive. Broadcast-ready.</div>
   <p>Voice Actor | Narration | Character Work</p>
-  <a href="mailto:braewilderva@gmail.com" class="book-btn">Book Me</a>
+
+  <div class="wave">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <a href="#contact" class="book-btn">Book Me</a>
 </header>
 
 <div class="container">
@@ -135,7 +203,7 @@
     <h2>Demo Reels</h2>
 
     <div class="demo">
-      <h3>Commercial Demo</h3>
+      <h3>🎙️ Commercial Demo</h3>
       <p>Bright, energetic reads for ads and promos.</p>
       <audio controls>
         <source src="https://dn721808.ca.archive.org/0/items/commercial_202604/commercial.mp3" type="audio/mpeg">
@@ -143,7 +211,7 @@
     </div>
 
     <div class="demo">
-      <h3>Character Demo</h3>
+      <h3>🎭 Character Demo</h3>
       <p>Range of character voices and acting styles.</p>
       <audio controls>
         <source src="https://ia801600.us.archive.org/34/items/character-reels-brae/character%20reels.mp3" type="audio/mpeg">
@@ -151,7 +219,7 @@
     </div>
 
     <div class="demo">
-      <h3>Narration Demo</h3>
+      <h3>📖 Narration Demo</h3>
       <p>Calm, clear storytelling and documentary style.</p>
       <audio controls>
         <source src="audio/narration.mp3" type="audio/mpeg">
@@ -160,10 +228,16 @@
 
   </section>
 
+  <section id="contact" class="contact">
+    <h2>Book Me</h2>
+    <p>Available for commercial, character, and narration work. Let’s bring your project to life.</p>
+    <a href="mailto:braewilderva@gmail.com">Email Me</a>
+  </section>
+
 </div>
 
 <footer>
-  <p>Contact: braewilderva@gmail.com</p>
+  <p>© 2026 Brae Wilder</p>
 </footer>
 
 </body>
